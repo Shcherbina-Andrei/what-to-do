@@ -20,6 +20,12 @@
   padding: 15px;
   border: none;
   border-radius: 15px;
+  transition: 0.4s all;
+}
+
+.task-card__input:disabled {
+  background-color: transparent;
+  color: #221c1c
 }
 
 .task-card__controls {
