@@ -1,0 +1,26 @@
+.add-task-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  padding: 20px 26px;
+  color: #00ffff;
+  background-color: #3f72af;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.add-task-button:active {
+  transform: scale(0.98);
+  font-size: 22px;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+
+.add-task-button__icon {
+  margin-right: 5px;
+  fill: #00ffff
+}
