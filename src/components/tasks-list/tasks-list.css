@@ -17,4 +17,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin: 0;
+  list-style: none;
+}
+
+.tasks__item:not(:last-child) {
+  margin-bottom: 50px;
 }

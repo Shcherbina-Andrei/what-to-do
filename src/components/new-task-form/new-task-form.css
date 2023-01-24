@@ -1,0 +1,32 @@
+.new-task__title {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px
+}
+
+.new-task__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-task__task-input {
+  padding: 10px;
+  font-size: 22px;
+  border: none;
+  border: 30px;
+  margin-bottom: 30px;
+}
+
+.new-task__submit-button {
+  padding: 18px 18px;
+  font-size: 22px;
+  color: #00ffff;
+  background-color: #3f72af;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
