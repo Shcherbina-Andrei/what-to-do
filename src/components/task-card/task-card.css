@@ -16,6 +16,9 @@
 }
 
 .task-card__input {
+  font-family: "Ubuntu", Arial;
+  height: auto;
+  resize: none;
   font-size: 26px;
   padding: 15px;
   border: none;
@@ -25,7 +28,16 @@
 
 .task-card__input:disabled {
   background-color: transparent;
-  color: #221c1c
+  color: #221c1c;
+}
+
+.task-card__description {
+  margin: 0;
+  font-family: "Ubuntu", Arial;
+  max-width: 500px;
+  color: #221c1c;
+  font-size: 26px;
+  padding: 15px;
 }
 
 .task-card__controls {
