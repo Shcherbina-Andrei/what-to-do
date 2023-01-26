@@ -3,8 +3,16 @@ import {useState} from 'react';
 import {customAlphabet} from 'nanoid';
 import {useDispatch} from 'react-redux';
 import { addTaskAction } from '../../store/action';
+import ModalWindow from '../../components/modal-window/modal-window';
 
-function NewTaskForm(): JSX.Element {
+type PropsType = {
+  modalActiveForm: boolean;
+  setModalActive: (modalActive: boolean) => void;
+}
+
+function NewTaskForm({modalActiveForm, setModalActive}: PropsType): JSX.Element {
+
+
   const [taskItem, setTaskItem] = useState({description: ''});
   const dispatch = useDispatch();
 
@@ -13,29 +21,38 @@ function NewTaskForm(): JSX.Element {
   const submitFormHandle = () => {
     if (taskItem.description !== '') {
       dispatch(addTaskAction({id: nanoid(), description: taskItem.description}));
+      setTaskItem({...taskItem, description: ''});
+      setModalActive(false);
     }
   };
 
+  const closeFormHandle = () => {
+    setTaskItem({...taskItem, description: ''});
+    setModalActive(false);
+  };
+
   return (
-    <section className="new-task">
-      <h2 className="new-task__title">Add your task</h2>
-      <form className="new-task__form" onSubmit={(evt) => {
-        evt.preventDefault();
-        submitFormHandle();
-      }}
-      >
-        <input className="new-task__task-input" type="text" placeholder='enter your task here...' value={taskItem.description} onChange={
-          (evt) => {
-            setTaskItem({
-              ...taskItem,
-              description: evt.target.value
-            });
+    <ModalWindow active={modalActiveForm} setActive={closeFormHandle}>
+      <section className="new-task">
+        <h2 className="new-task__title">Add your task</h2>
+        <form className="new-task__form" onSubmit={(evt) => {
+          evt.preventDefault();
+          submitFormHandle();
+        }}
+        >
+          <input className="new-task__task-input" type="text" placeholder='enter your task here...' value={taskItem.description} onChange={
+            (evt) => {
+              setTaskItem({
+                ...taskItem,
+                description: evt.target.value
+              });
+            }
           }
-        }
-        />
-        <button className="new-task__submit-button" type="submit">Add</button>
-      </form>
-    </section>
+          />
+          <button className="new-task__submit-button" type="submit">Add</button>
+        </form>
+      </section>
+    </ModalWindow>
   );
 }
 

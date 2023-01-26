@@ -1,6 +1,5 @@
 import AddTaskButton from '../add-task-button/add-task-button';
 import SearchingTask from '../searching-task/searching-task';
-import ModalWindow from '../../components/modal-window/modal-window';
 import NewTaskForm from '../../components/new-task-form/new-task-form';
 import {useState} from 'react';
 import './header.css';
@@ -22,9 +21,7 @@ function Header(): JSX.Element {
           <ProfileItem />
         </div>
       </div>
-      <ModalWindow active={modalActive} setActive={setModalActive}>
-        <NewTaskForm />
-      </ModalWindow>
+      <NewTaskForm modalActiveForm={modalActive} setModalActive={setModalActive}/>
     </header>
   );
 }

@@ -4,10 +4,13 @@ import { Provider } from 'react-redux';
 import App from './components/app/app';
 import './css/main.css';
 import {store} from './store';
+import { getTasksFromLocalStoreAction } from './store/action';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
+
+store.dispatch(getTasksFromLocalStoreAction());
 
 root.render(
   <React.StrictMode>
