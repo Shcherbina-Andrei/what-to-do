@@ -8,3 +8,5 @@ export const editTaskAction = createAction<Task>('app/editTask');
 export const deleteTaskAction = createAction<Task>('app/deleteTask');
 
 export const getTasksFromLocalStoreAction = createAction('app/getTasksFromLocalStore');
+
+export const changePositionTaskAction = createAction<{movedCard: Task; nextCard: Task}>('app/changePositionTask');

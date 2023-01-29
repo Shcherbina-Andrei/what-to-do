@@ -24,3 +24,11 @@
 .tasks__item:not(:last-child) {
   margin-bottom: 50px;
 }
+
+.tasks__item--selected {
+  opacity: 0.6;
+}
+
+.tasks__item--over {
+  border: 1px dotted #3f72af;
+}
