@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changePositionTaskAction } from '../../store/action';
+import { changePositionTaskAction } from '../../store/tasks-data/action';
 import { Task, Tasks } from '../../types/task';
 import TaskCard from '../task-card/task-card';
 import './tasks-list.css';
