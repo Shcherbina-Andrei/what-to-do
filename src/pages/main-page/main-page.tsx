@@ -1,12 +1,11 @@
 import {useSelector} from 'react-redux';
 import Header from '../../components/header/header';
 import TasksList from '../../components/tasks-list/tasks-list';
-import {State} from '../../store/state';
-import { Tasks } from '../../types/task';
+import { getTasks } from '../../store/tasks-data/selectors';
 import './main-page.css';
 
 function MainPage(): JSX.Element {
-  const tasks = useSelector<State, Tasks>((state) => state.tasks);
+  const tasks = useSelector(getTasks);
 
   return (
     <div className="page__container">

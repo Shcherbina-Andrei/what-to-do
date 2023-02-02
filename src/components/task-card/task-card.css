@@ -1,9 +1,15 @@
+.task:not(:last-child) {
+  margin-bottom: 20px;
+}
+
 .task-card {
+  position: relative;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+  color: #221c1c;
   min-height: 100px;
   min-width: 800px;
   border-radius: 15px;
@@ -11,31 +17,15 @@
   box-shadow: 4px 2px 18px 1px rgba(0, 0, 0, 0.24);
 }
 
-.task-card:not(:last-child) {
-  margin-bottom: 20px;
-}
-
-.task-card__input {
-  font-family: "Ubuntu", Arial;
-  height: auto;
-  resize: none;
-  font-size: 26px;
-  padding: 15px;
-  border: none;
-  border-radius: 15px;
-  transition: 0.4s all;
-}
-
-.task-card__input:disabled {
-  background-color: transparent;
-  color: #221c1c;
+.task-card--attention {
+  color: rgba(168, 25, 25, 1);
+  box-shadow: 0 0 30px 1px rgba(168, 25, 25, 0.884);
 }
 
 .task-card__description {
   margin: 0;
   font-family: "Ubuntu", Arial;
   max-width: 500px;
-  color: #221c1c;
   font-size: 26px;
   padding: 15px;
 }
@@ -75,3 +65,55 @@
   fill: #00ffff;
 }
 
+.task-card__show-detail-button {
+  position: absolute;
+  bottom: 0;
+  width: 5vw;
+  height: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.task-card__show-detail-button:hover {
+  opacity: 0.8;
+}
+
+.task-card__show-detail-button:active {
+  opacity: 0.6;
+}
+
+.task-card__show-detail-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%) rotate(135deg);
+  width: 10px;
+  height: 10px;
+  border-top: solid 3px #3f72af;
+  border-right: solid 3px #3f72af;
+  transition: 0.3s all;
+}
+
+.task-card__show-detail-button--open::after {
+  transform: rotate(-45deg);
+}
+
+.task-card__details {
+  width: 750px;
+  min-height: 200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f5f5dc;
+  border-radius: 15px;
+}
+
+.task-card__attention-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -80px;
+}

@@ -11,6 +11,7 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
+  z-index: 10;
 }
 
 .modal--active {
@@ -26,7 +27,7 @@
   align-items: center;
   background-color: #f5f5dc;
   padding: 40px;
-  width: 20vw;
+  min-width: 20vw;
   border-radius: 20px;
   transform: scale(0.5);
   transition: 0.2s all;
