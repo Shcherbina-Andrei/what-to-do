@@ -21,7 +21,7 @@ type PropsType = {
 function NewTaskForm({modalActiveForm, setModalActive}: PropsType): JSX.Element {
 
 
-  const [taskItem, setTaskItem] = useState<NewTask>(BLANK_TASK);
+  const [taskItem, setTaskItem] = useState(BLANK_TASK);
   const dispatch = useDispatch();
 
   const nanoid = customAlphabet('0123456789', 7);
@@ -50,7 +50,7 @@ function NewTaskForm({modalActiveForm, setModalActive}: PropsType): JSX.Element 
   const submitFormHandle = () => {
     if (taskItem.description !== '') {
       dispatch(addTaskAction(
-        {...taskItem,id: nanoid(), creatingDate: nowDate, isOverdue: false, isDone: false}));
+        {...taskItem,id: nanoid(), creatingDate: nowDate, isOverdue: false, isDone: false, listId: '12'}));
       resetForm();
       setModalActive(false);
     }

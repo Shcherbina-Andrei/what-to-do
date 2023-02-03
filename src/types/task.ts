@@ -14,6 +14,7 @@ export type Task = {
   deadline: string;
   isDone: boolean;
   isOverdue: boolean;
+  listId: string;
 };
 
 export type Tasks = Task[];
