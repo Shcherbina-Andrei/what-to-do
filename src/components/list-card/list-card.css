@@ -1,0 +1,27 @@
+.list-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 200px;
+  min-height: 200px;
+  padding: 10px;
+  background-color: rgb(218, 218, 248);
+  border-radius: 10px;
+}
+
+.list-card__title {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.list-card__numbers-of-tasks {
+  text-align: center;
+  margin: 0;
+}
+
+.list-card__controls {
+  display: flex;
+  justify-content: space-around;
+}

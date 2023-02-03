@@ -1,6 +1,7 @@
 export enum AppRoute {
   Main = '/',
-  SearchResult = '/search-results'
+  SearchResult = '/search-results',
+  Lists = '/list'
 }
 
 export enum TaskMode {
@@ -10,6 +11,7 @@ export enum TaskMode {
 }
 
 export enum NameSpace {
-  Tasks = 'TASKS'
+  Tasks = 'TASKS',
+  Lists = 'LISTS'
 }
 
