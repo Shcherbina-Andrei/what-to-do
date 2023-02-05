@@ -17,7 +17,9 @@
 .page__container {
   box-sizing: border-box;
   width: 1400px;
+  min-height: 1000px;
   padding: 20px;
+  padding-bottom: 60px;
   margin: 0 auto;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -37,4 +39,11 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.page-title {
+  font-size: 46px;
+  text-transform: uppercase;
+  color: #3f72af;
+  text-align: center;
 }

@@ -1,5 +1,4 @@
-import {Tasks} from './task';
-
+import { Tasks } from './task';
 export type NewList = {
   title: string;
   tasks: [];

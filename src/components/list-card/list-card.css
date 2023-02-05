@@ -6,22 +6,69 @@
   width: 200px;
   min-height: 200px;
   padding: 10px;
+  padding-top: 30px;
   background-color: rgb(218, 218, 248);
   border-radius: 10px;
 }
 
 .list-card__title {
   margin: 0;
-  font-size: 18px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #112d4e;
+  text-transform: uppercase;
   text-align: center;
 }
 
 .list-card__numbers-of-tasks {
   text-align: center;
+  color: #112d4e;
   margin: 0;
 }
 
 .list-card__controls {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+}
+
+.list-card__link {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #00ffff;
+  background-color: #3f72af;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.list-card__link:hover {
+  opacity: 0.8;
+}
+
+.list-card__link:active {
+  opacity: 0.6;
+}
+
+.list-card__delete-button {
+  text-align: center;
+  padding: 5px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #00ffff;
+  background-color: #c96060;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.list-card__delete-button:hover {
+  opacity: 0.8;
+}
+
+.list-card__delete-button:active {
+  opacity: 0.6;
 }
