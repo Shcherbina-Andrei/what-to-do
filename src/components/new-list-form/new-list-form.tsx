@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addListAction } from '../../store/lists-data/action';
 import {NewList} from '../../types/list';
 import ModalWindow from '../modal-window/modal-window';
+import './new-list-form.css';
 
 const BLANK_LIST: NewList = {
   title: '',
@@ -61,7 +62,7 @@ function NewListForm({modalActive, setModalActive}: PropsType): JSX.Element {
         >
           <div className="new-list__field-group">
             <label className="new-list__label" htmlFor="list-title">Title:</label>
-            <input className="new-list__input" id="list-title" type="text" placeholder="enter title here..." value={listItem.title} onChange={
+            <input className="new-list__input" id="list-title" type="text" placeholder="enter title here..." value={listItem.title} required onChange={
               (evt) => inputHandle<string>('title', evt.target.value)
             }
             />

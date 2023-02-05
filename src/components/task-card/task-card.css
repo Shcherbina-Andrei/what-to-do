@@ -46,6 +46,15 @@
   cursor: pointer;
 }
 
+.task-card__checkbox {
+  width: 59px;
+  height: 54px;
+  border: none;
+  border-radius: 10px;
+  background-color: #3f72af;
+  margin-right: 15px;
+}
+
 .task-card__button--edit {
   background-color: #3f72af;
   margin-right: 15px;

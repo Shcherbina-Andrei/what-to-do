@@ -3,16 +3,16 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { AppRoute } from '../../const';
-import { addSearchedTasks } from '../../store/tasks-data/action';
-import { getTasks } from '../../store/tasks-data/selectors';
-import { Task } from '../../types/task';
+import { addSearchedTasks } from '../../store/lists-data/action';
+import { getLists } from '../../store/lists-data/selectors';
+import { Task, Tasks } from '../../types/task';
 import './searching-task.css';
 
 function SearchingTask(): JSX.Element {
   const [searchField, setSearchField] = useState('');
   const [displaySuggestions, setDisplaySuggestions] = useState(false);
   const dispatch = useDispatch();
-  const tasks = useSelector(getTasks);
+  const lists = useSelector(getLists);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,11 +21,13 @@ function SearchingTask(): JSX.Element {
     });
   });
 
-  const filteredTasks = tasks.filter((task) => (
+  const filterTasks = (tasks: Tasks): Tasks => tasks.filter((task) => (
     task.title.toLowerCase().includes(searchField.toLowerCase())
-      ||
-      task.description.toLowerCase().includes(searchField.toLowerCase())
+        ||
+        task.description.toLowerCase().includes(searchField.toLowerCase())
   ));
+
+  const filteredTasks = lists.reduce<Tasks>((tasks, list) => tasks.concat([...filterTasks(list.tasks)]), []);
 
   const handleOnSearchInput = (text: string) => {
     setSearchField(text);

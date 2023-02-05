@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { editTaskAction } from '../../store/tasks-data/action';
+import { editTaskAction } from '../../store/lists-data/action';
 import { Task } from '../../types/task';
 import './edit-task.css';
 

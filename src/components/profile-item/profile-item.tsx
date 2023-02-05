@@ -13,7 +13,7 @@ function ProfileItem(): JSX.Element {
         </g>
       </svg>
       <Link className="profile__link" to="">
-        <span className="profile__signout">Sign out</span>
+        <span className="profile__signout">Sign in</span>
       </Link>
     </div>
   );

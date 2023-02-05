@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getSearchedTasks } from '../../store/tasks-data/selectors';
+import { getSearchedTasks } from '../../store/lists-data/selectors';
 import TaskCard from '../task-card/task-card';
 import './search-results-list.css';
 

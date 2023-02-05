@@ -12,7 +12,6 @@ function ListOfLists(): JSX.Element {
 
   return (
     <div className="list-of-lists">
-      <h2 className="list-of-lists__title">Your lists</h2>
       <ul className="list-of-lists__roster">
         {lists.map((list) => <li className="list-of-list__item" key={list.id}><ListCard list={list}/></li>)}
         <li className="list-of-list__item"><AddNewListButton addListHandle={setModalActive}/></li>

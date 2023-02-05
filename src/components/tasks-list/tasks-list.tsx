@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { changePositionTaskAction } from '../../store/tasks-data/action';
+import { changeListOrderAction } from '../../store/lists-data/action';
 import { Task, Tasks } from '../../types/task';
 import TaskCard from '../task-card/task-card';
 import './tasks-list.css';
@@ -13,6 +13,14 @@ function TasksList({tasks}: TasksListProps): JSX.Element {
   const [currentCard, setCurrentCard] = useState<Task | null>(null);
 
   const dispatch = useDispatch();
+
+  if (tasks.length === 0) {
+    return (
+      <div className="tasks">
+        <p className="tasks__no-tasks">There are no tasks yet...</p>
+      </div>
+    );
+  }
 
   const handleDragStart = (evt: React.DragEvent<HTMLLIElement>, task: Task) => {
     setCurrentCard(task);
@@ -36,12 +44,11 @@ function TasksList({tasks}: TasksListProps): JSX.Element {
     if (currentCard.id === task.id) {
       return;
     }
-    dispatch(changePositionTaskAction({movedCard: currentCard, nextCard: task}));
+    dispatch(changeListOrderAction({movedTask: currentCard, replacedTask: task}));
   };
 
   return (
     <section className="tasks">
-      <h2 className='tasks__title'>What to do</h2>
       <ul className="tasks__list">
         {tasks.map((task) =>
           (

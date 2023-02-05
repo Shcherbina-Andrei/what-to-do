@@ -1,0 +1,48 @@
+.new-list {
+  font-size: 22px;
+}
+
+.new-list__title {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px
+}
+
+.new-list__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-list__field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.new-list__label {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.new-list__input {
+  padding: 10px;
+  font-family: "Ubuntu", Arial;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+}
+
+.new-list__submit-button {
+  padding: 18px 18px;
+  font-size: 22px;
+  color: #00ffff;
+  background-color: #3f72af;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
