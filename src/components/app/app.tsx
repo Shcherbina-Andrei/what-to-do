@@ -1,4 +1,4 @@
-import {Route, BrowserRouter, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import { AppRoute } from '../../const';
 import ListPage from '../../pages/list-page/list-page';
 import MainPage from '../../pages/main-page/main-page';
@@ -7,26 +7,24 @@ import SearchResultsPage from '../../pages/search-results-page/search-results-pa
 
 function App(): JSX.Element {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={AppRoute.Main} element={<PageLayout />}>
+    <Routes>
+      <Route path={AppRoute.Main} element={<PageLayout />}>
+        <Route
+          index
+          element={<MainPage />}
+        />
+        <Route path={AppRoute.Lists}>
           <Route
-            index
-            element={<MainPage />}
-          />
-          <Route path={AppRoute.Lists}>
-            <Route
-              path=":id"
-              element={<ListPage />}
-            />
-          </Route>
-          <Route
-            path={AppRoute.SearchResult}
-            element={<SearchResultsPage />}
+            path=":id"
+            element={<ListPage />}
           />
         </Route>
-      </Routes>
-    </BrowserRouter>
+        <Route
+          path={AppRoute.SearchResult}
+          element={<SearchResultsPage />}
+        />
+      </Route>
+    </Routes>
   );
 }
 

@@ -77,6 +77,11 @@
 }
 
 @media (max-width: 767px) {
+  .modal__content {
+    min-width: none;
+    width: 90vw;
+  }
+
   .modal__close-button {
     width: 30px;
     height: 30px;

@@ -117,7 +117,6 @@
   .task-card__title {
     margin: 0;
     font-family: "Ubuntu", Arial;
-    word-break: break-all;
     max-width: 300px;
     font-size: 20px;
     padding: 10px;
@@ -133,12 +132,15 @@
 @media (max-width: 767px) {
   .task {
     box-sizing: border-box;
+    padding: 5px;
     width: 200px;
     margin: 0 auto;
   }
   .task-card {
     flex-direction: column;
     max-width: none;
+    padding: 10px;
+    padding-top: 20px;
     padding-bottom: 50px;
   }
 
@@ -146,9 +148,10 @@
     margin: 0;
     font-size: 20px;
     text-transform: uppercase;
+    text-align: center;
     font-weight: 700;
     padding: 0;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
 
   .task-card__controls {
