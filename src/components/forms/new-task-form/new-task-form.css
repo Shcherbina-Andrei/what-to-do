@@ -62,7 +62,7 @@
 
 @media (max-width: 767px) {
   .new-task {
-    width: 80%;
+    width: 100%;
     font-size: 18px;
   }
 
@@ -70,5 +70,9 @@
     font-size: 18px;
     text-transform: uppercase;
     margin-bottom: 15px;
+  }
+
+  .new-task__task-input::placeholder {
+    font-size: 18px;
   }
 }
