@@ -13,3 +13,34 @@
   fill: #3f72af;
   margin-right: 20px;
 }
+
+@media (max-width: 1399px) {
+  .profile {
+    min-width: 90px;
+  }
+  .profile__link {
+    font-size: 18px;
+  }
+
+  .profile__icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .profile {
+    margin-bottom: 30px;
+  }
+
+  .profile__link {
+    font-size: 20px;
+  }
+
+  .profile__icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+}

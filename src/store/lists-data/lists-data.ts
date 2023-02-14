@@ -1,17 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { NameSpace } from '../../const';
-import { Tasks } from '../../types/task';
-import { Lists } from './../../types/list';
-import { addListAction, editListAction, deleteListAction, changeListOrderAction, addTaskAction, deleteTaskAction, editTaskAction, addSearchedTasks } from './action';
+import {createSlice} from '@reduxjs/toolkit';
+import {NameSpace} from '../../const';
+import {Lists} from './../../types/list';
+import {addListAction, editListAction, deleteListAction, changeListOrderAction, addTaskAction, deleteTaskAction, editTaskAction} from './action';
 
 type ListsData = {
   lists: Lists;
-  searchedTasks: Tasks;
 };
 
 const initialState: ListsData = {
-  lists: [],
-  searchedTasks: []
+  lists: []
 };
 
 export const listsData = createSlice({
@@ -52,9 +49,6 @@ export const listsData = createSlice({
         const replacedTaskIndex = state.lists[currentListIndex].tasks.findIndex((task) => replacedTask.id === task.id);
         const remainingTasks = state.lists[currentListIndex].tasks.filter((task) => task.id !== movedTask.id);
         state.lists[currentListIndex].tasks = [...remainingTasks.slice(0, replacedTaskIndex), movedTask, ...remainingTasks.slice(replacedTaskIndex,)];
-      })
-      .addCase(addSearchedTasks, (state, action) => {
-        state.searchedTasks = action.payload;
       });
   }
 });

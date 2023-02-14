@@ -18,3 +18,31 @@
   justify-content: space-between;
   margin-bottom: 60px;
 }
+
+@media (max-width: 767px) {
+  .list-page__controls {
+    display: grid;
+    grid-template-areas: "add-task delete-list"
+                         "filter filter";
+    column-gap: 20px;
+    row-gap: 40px;
+  }
+
+  .list-page__add-task-button-wrapper {
+    grid-area: add-task;
+  }
+
+  .list-page__title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .list-page__delete-list-button-wrapper {
+    grid-area: delete-list;
+  }
+
+  .list-page__filter-wrapper {
+    grid-area: filter;
+    justify-self: center;
+  }
+}

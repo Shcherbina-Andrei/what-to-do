@@ -1,4 +1,4 @@
-import {Task, Tasks} from './../../types/task';
+import {Task} from './../../types/task';
 import {List} from './../../types/list';
 import {createAction} from '@reduxjs/toolkit';
 
@@ -18,4 +18,3 @@ export const deleteListAction = createAction<List>('app/deleteList');
 
 export const changeListOrderAction = createAction<{movedTask: Task; replacedTask: Task}>('app/changeOrderList');
 
-export const addSearchedTasks = createAction<Tasks>('app/addSearchedTasks');

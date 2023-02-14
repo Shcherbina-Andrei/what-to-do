@@ -1,6 +1,5 @@
 import { NameSpace } from './../../const';
-import { State } from './../state';
+import {State} from '../../types/state';
 
 export const getLists = (state: State) => state[NameSpace.Lists].lists;
 
-export const getSearchedTasks = (state: State) => state[NameSpace.Lists].searchedTasks;

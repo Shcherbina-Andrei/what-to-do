@@ -11,7 +11,13 @@ export enum TaskMode {
 }
 
 export enum NameSpace {
-  Tasks = 'TASKS',
+  App = 'APP',
   Lists = 'LISTS'
+}
+
+export enum FilterTypes {
+  All = 'All',
+  Completed = 'Completed',
+  InProcess = 'In process'
 }
 

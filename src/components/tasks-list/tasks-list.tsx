@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { changeListOrderAction } from '../../store/lists-data/action';
-import { Task, Tasks } from '../../types/task';
-import TaskCard from '../task-card/task-card';
+import { FilterTypes } from '../../const';
+import { useAppSelector } from '../../hooks';
+import { getCurrentFilterType } from '../../store/app-process/selectors';
+import {Tasks} from '../../types/task';
+import { filterTasks } from '../../utils/filter-tasks';
+import { getNoTasksDescription } from '../../utils/get-no-tasks-descriptions';
+import DragAndDropList from '../drag-and-drop-list/drag-and-drop-list';
 import './tasks-list.css';
 
 type TasksListProps = {
@@ -10,62 +12,29 @@ type TasksListProps = {
 }
 
 function TasksList({tasks}: TasksListProps): JSX.Element {
-  const [currentCard, setCurrentCard] = useState<Task | null>(null);
-
-  const dispatch = useDispatch();
+  const currentFilterType = useAppSelector(getCurrentFilterType);
 
   if (tasks.length === 0) {
     return (
       <div className="tasks">
-        <p className="tasks__no-tasks">There are no tasks yet...</p>
+        <p className="tasks__no-tasks">{getNoTasksDescription(FilterTypes.All)}</p>
       </div>
     );
   }
 
-  const handleDragStart = (evt: React.DragEvent<HTMLLIElement>, task: Task) => {
-    setCurrentCard(task);
-    const currentElement = evt.target as HTMLLIElement;
-    currentElement.classList.add('tasks__item--selected');
-  };
+  const currentTasks = filterTasks(tasks, currentFilterType);
 
-  const handleDragEnd = (evt: React.DragEvent<HTMLLIElement>) => {
-    const currentElement = evt.target as HTMLLIElement;
-    currentElement.classList.remove('tasks__item--selected');
-  };
-
-  const handleDragOver = (evt: React.DragEvent<HTMLLIElement>) => {
-    evt.preventDefault();
-  };
-
-  const handleDrop = (evt: React.DragEvent<HTMLLIElement>, task: Task) => {
-    if (!currentCard) {
-      return null;
-    }
-    if (currentCard.id === task.id) {
-      return;
-    }
-    dispatch(changeListOrderAction({movedTask: currentCard, replacedTask: task}));
-  };
+  if (currentTasks.length === 0) {
+    return (
+      <div className="tasks">
+        <p className="tasks__no-tasks">{getNoTasksDescription(currentFilterType)}</p>
+      </div>
+    );
+  }
 
   return (
     <section className="tasks">
-      <ul className="tasks__list">
-        {tasks.map((task) =>
-          (
-            <li
-              className="tasks__item" id={`task__${task.id}`}
-              key={task.id}
-              draggable
-              onDragStart={(evt) => handleDragStart(evt, task)}
-              onDragEnd={(evt) => handleDragEnd(evt)}
-              onDragOver={(evt) => handleDragOver(evt)}
-              onDrop={(evt) => handleDrop(evt, task)}
-            >
-              <TaskCard task={task} />
-            </li>
-          )
-        )}
-      </ul>
+      <DragAndDropList tasks={currentTasks} />
     </section>
   );
 }

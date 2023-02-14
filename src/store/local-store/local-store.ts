@@ -9,7 +9,7 @@ export const getLocalLists = () => {
   }
 };
 
-export const updateListsLocalStore = (listsItems: Lists) => {
+export const updateListsLocalStore = (listsItems: Lists): void => {
   localStorage.setItem('lists', JSON.stringify(listsItems));
 };
 

@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
+import { useAppDispatch } from '../../hooks';
 import {deleteListAction} from '../../store/lists-data/action';
 import { List } from '../../types/list';
 import './list-card.css';
@@ -10,7 +10,7 @@ type PropsType = {
 }
 
 function ListCard({list}: PropsType): JSX.Element {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const deleteButtonHandle = () => {
     dispatch(deleteListAction(list));
   };

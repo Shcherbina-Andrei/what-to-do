@@ -1,7 +1,8 @@
+import React from 'react';
 import './modal-window.css';
 
 type PageProps = {
-  children: JSX.Element | null;
+  children: React.ReactNode;
   active: boolean;
   setActive: (modalActive: boolean) => void;
 }

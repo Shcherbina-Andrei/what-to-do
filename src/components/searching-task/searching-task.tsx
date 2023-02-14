@@ -1,54 +1,28 @@
-import {SyntheticEvent, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import {SyntheticEvent, useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import { AppRoute } from '../../const';
-import { addSearchedTasks } from '../../store/lists-data/action';
-import { getLists } from '../../store/lists-data/selectors';
-import { Task, Tasks } from '../../types/task';
+import { useAppDispatch } from '../../hooks';
+import { setSearchRequest } from '../../store/app-process/app-process';
 import './searching-task.css';
 
 function SearchingTask(): JSX.Element {
   const [searchField, setSearchField] = useState('');
-  const [displaySuggestions, setDisplaySuggestions] = useState(false);
-  const dispatch = useDispatch();
-  const lists = useSelector(getLists);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    document.addEventListener('click', () => {
-      setDisplaySuggestions(false);
-    });
-  });
-
-  const filterTasks = (tasks: Tasks): Tasks => tasks.filter((task) => (
-    task.title.toLowerCase().includes(searchField.toLowerCase())
-        ||
-        task.description.toLowerCase().includes(searchField.toLowerCase())
-  ));
-
-  const filteredTasks = lists.reduce<Tasks>((tasks, list) => tasks.concat([...filterTasks(list.tasks)]), []);
 
   const handleOnSearchInput = (text: string) => {
     setSearchField(text);
-    setDisplaySuggestions(true);
   };
 
   const handleOnSubmit = (evt: SyntheticEvent) => {
     evt.preventDefault();
-    dispatch(addSearchedTasks(filteredTasks));
+    dispatch(setSearchRequest(searchField));
     navigate(AppRoute.SearchResult);
-    setDisplaySuggestions(false);
-  };
-
-  const handleTaskLink = (task: Task) => {
-    dispatch(addSearchedTasks([task]));
-    setDisplaySuggestions(false);
   };
 
   return (
     <form className="search-task" action="" method="get" onSubmit={handleOnSubmit} onClick={(evt) => evt.stopPropagation()}>
-      <input className="search-task__input" placeholder="Search here..." type="search" onChange={(evt) => handleOnSearchInput(evt.target.value)} onClick={() => setDisplaySuggestions(true)}/>
+      <input className="search-task__input" placeholder="Search here..." type="search" onChange={(evt) => handleOnSearchInput(evt.target.value)} required/>
       <button className="search-task__button" type="submit">
         <svg className="search-task__icon" width="30" height="30" viewBox="0 0 64.00 64.00" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" strokeWidth="5.4399999999999995">
           <g id="SVGRepo_bgCarrier" strokeWidth="0"/>
@@ -59,13 +33,6 @@ function SearchingTask(): JSX.Element {
           </g>
         </svg>
       </button>
-      {displaySuggestions && searchField && filteredTasks.length > 0
-      &&
-      <div className= "search-task__suggested-tasks">
-        {filteredTasks.map((task) => (
-          <Link className="search-task__suggested-item" to={AppRoute.SearchResult} key={task.id} onClick={() => handleTaskLink(task)}>{task.title}</Link>
-        ))}
-      </div>}
     </form>
   );
 }

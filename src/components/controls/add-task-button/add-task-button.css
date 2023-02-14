@@ -1,0 +1,48 @@
+.add-task-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  padding: 20px 26px;
+  color: #00ffff;
+  background-color: #3f72af;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.add-task-button:active {
+  transform: scale(0.98);
+  font-size: 22px;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+
+.add-task-button__icon {
+  margin-right: 5px;
+  fill: #00ffff
+}
+
+@media (max-width: 1399px) {
+  .add-task-button {
+    padding: 18px 24px;
+    font-size: 20px;
+  }
+
+  .add-task-button:active {
+    font-size: 20px
+  }
+}
+
+@media (max-width: 767px) {
+  .add-task-button {
+    padding: 16px 22px;
+    font-size: 18px;
+  }
+
+  .add-task-button__icon {
+    display: none;
+  }
+}

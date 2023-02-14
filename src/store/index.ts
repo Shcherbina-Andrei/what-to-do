@@ -8,8 +8,7 @@ export const store = configureStore({
   reducer: rootReducer,
   preloadedState: {
     [NameSpace.Lists]: {
-      lists: getLocalLists(),
-      searchedTasks: []
+      lists: getLocalLists()
     }
   }});
 

@@ -1,26 +1,5 @@
-.tasks__list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-  list-style: none;
-}
-
 .tasks__no-tasks {
   color: #3f72af;
   font-size: 32px;
   text-align: center;
-}
-
-.tasks__item:not(:last-child) {
-  margin-bottom: 50px;
-}
-
-.tasks__item--selected {
-  opacity: 0.6;
-}
-
-.tasks__item--over {
-  border: 1px dotted #3f72af;
 }
