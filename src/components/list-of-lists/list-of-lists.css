@@ -1,10 +1,32 @@
 .list-of-lists__roster {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
   align-items: center;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   gap: 40px;
+}
+
+@media (max-width: 1399px) {
+  .list-of-lists__roster {
+    width: 84%;
+    column-gap: 6%;
+  }
+
+  .list-of-list__item:not(:last-child) {
+    margin-right: 2%;
+  }
+}
+
+@media (max-width: 767px) {
+  .list-of-lists__roster {
+    flex-direction: column;
+  }
+
+  .list-of-list__item {
+    margin-right: 0;
+  }
 }
 

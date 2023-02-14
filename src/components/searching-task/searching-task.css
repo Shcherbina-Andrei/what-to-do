@@ -2,12 +2,12 @@
   display: flex;
   position: relative;
   justify-content: space-between;
-  min-width: 500px;
+  width: 500px;
 }
 
 .search-task__input {
   box-sizing: border-box;
-  min-width: 400px;
+  width: 400px;
   font-size: 22px;
   color: #002137;
   padding-left: 5px;
@@ -73,4 +73,33 @@
 
 .search-task__suggested-item:not(:last-child) {
   margin-bottom: 10px;
+}
+
+@media (max-width: 1399px) {
+  .search-task {
+    flex-shrink: 2;
+    margin-right: 60px;
+  }
+
+  .search-task__input {
+    flex-shrink: 3;
+    width: 80%;
+    font-size: 20px;
+  }
+
+  .search-task__input::placeholder {
+    font-size: 20px;
+  }
+
+  .search-task__button {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .search-task {
+    flex-shrink: 1;
+    width: 100%;
+    margin-right: 0;
+  }
 }

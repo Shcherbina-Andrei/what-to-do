@@ -75,3 +75,10 @@
 .modal__close-button:after {
   transform: rotate(-45deg);
 }
+
+@media (max-width: 767px) {
+  .modal__close-button {
+    width: 30px;
+    height: 30px;
+  }
+}

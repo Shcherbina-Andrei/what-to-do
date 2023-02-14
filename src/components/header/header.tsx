@@ -7,12 +7,8 @@ function Header(): JSX.Element {
   return (
     <header className="header">
       <div className="header__wrapper">
-        <div className="header__search">
-          <SearchingTask />
-        </div>
-        <div className="header__profile">
-          <ProfileItem />
-        </div>
+        <SearchingTask />
+        <ProfileItem />
       </div>
     </header>
   );

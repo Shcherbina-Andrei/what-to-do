@@ -72,3 +72,11 @@
 .list-card__delete-button:active {
   opacity: 0.6;
 }
+
+@media (max-width: 767px) {
+  .list-card {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+

@@ -1,0 +1,14 @@
+.task-card__button--delete {
+  background-color: #c96060;
+}
+
+.task-card__delete-icon {
+  fill: #00ffff;
+}
+
+@media (max-width: 1399px) {
+  .task-card__button-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

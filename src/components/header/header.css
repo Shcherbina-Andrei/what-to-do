@@ -12,3 +12,32 @@
   padding-bottom: 50px;
   border-bottom: 6px solid #3f72af;
 }
+
+.header__search {
+  outline: 1px solid black;
+}
+
+.header__profile {
+  outline: 1px solid green;
+}
+
+
+@media (max-width: 1399px) {
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .header__wrapper {
+    width: 92%;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    border-bottom-width: 4px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__wrapper {
+    flex-direction: column-reverse;
+    padding-bottom: 30px;
+  }
+}

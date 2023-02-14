@@ -1,0 +1,16 @@
+.task-card__button--edit {
+  background-color: #3f72af;
+  margin-right: 15px;
+}
+
+.task-card__edit-icon {
+  fill: #00ffff;
+}
+
+
+@media (max-width: 767px) {
+  .task-card__button--edit {
+    margin-right: 0;
+  }
+}
+

@@ -1,0 +1,31 @@
+.task-card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 12px;
+  color: #00ffff;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.task-card__button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+@media (max-width: 1399px) {
+  .task-card__button {
+    padding: 8px 8px;
+    box-shadow: 4px 3px 14px 1px rgba(0, 0, 0, 0.24);
+  }
+}
+
+@media (max-width: 767px) {
+  .task-card__button {
+    width: 46px;
+    height: 46px;
+    margin: 0;
+  }
+}
