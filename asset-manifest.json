@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/what-to-do/static/css/main.090f8290.css",
+    "main.css": "/what-to-do/static/css/main.71d0da3e.css",
     "main.js": "/what-to-do/static/js/main.df041e83.js",
     "static/media/Ubuntu-Regular.woff": "/what-to-do/static/media/Ubuntu-Regular.625ab5ac26254286b766.woff",
     "static/media/Ubuntu-Regular.woff2": "/what-to-do/static/media/Ubuntu-Regular.ad9874da3221a2ac8af5.woff2",
     "index.html": "/what-to-do/index.html",
-    "main.090f8290.css.map": "/what-to-do/static/css/main.090f8290.css.map",
+    "main.71d0da3e.css.map": "/what-to-do/static/css/main.71d0da3e.css.map",
     "main.df041e83.js.map": "/what-to-do/static/js/main.df041e83.js.map"
   },
   "entrypoints": [
-    "static/css/main.090f8290.css",
+    "static/css/main.71d0da3e.css",
     "static/js/main.df041e83.js"
   ]
 }
